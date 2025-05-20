@@ -1,4 +1,5 @@
 <?php
+
 include 'conexao.php';
 
 // ======= EXCLUSÃO =======
@@ -182,7 +183,6 @@ $result = $conn->query($sql);
       <tr>
         <th>#</th>
         <th>Nome</th>
-        <th>Telefone</th>
         <th>Whatsapp</th>
         <th>Data de Nascimento</th>
         <th>Ações</th>
@@ -193,13 +193,14 @@ $result = $conn->query($sql);
         <tr>
           <td><?= $row['id'] ?></td>
           <td><?= htmlspecialchars($row['nome']) ?></td>
-          <td><?= htmlspecialchars($row['telefone']) ?></td>
           <td><a href="https://wa.me/55<?= preg_replace('/\D/', '', $row['telefone']) ?>" target="_blank"><?= htmlspecialchars($row['telefone']) ?></a></td>
-          <td><?= date("d/m/Y", strtotime($row['data_nascimento'])) ?></td>
+          <td><?= date("d/m/Y", strtotime($row['nascimento'])) ?></td>
           <td>
-            <button class="btn-icon" title="Editar">✏️</button>
+          <a class="btn-icon" href="alterarCliente.php?id=<?= $row['id'] ?>" title="Editar">✏️</a>
+
             <button class="btn-icon" title="Excluir" onclick="abrirModal('<?= addslashes($row['nome']) ?>', <?= $row['id'] ?>)">🗑️</button>
-            <button class="btn-icon" title="Agendar">📅</button>
+            <a class="btn-icon" title="Agendar" href="agendamentos.php?cliente_id=<?= $row['id'] ?>">📅</a>
+
           </td>
         </tr>
       <?php endwhile; ?>
