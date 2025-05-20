@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>RQF1 - Página Principal</title>
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+    }
+
+    body {
+      background-color: #f5f7fa;
+      color: #333;
+      display: flex;
+      flex-direction: column;
+      height: 100vh;
+    }
+
+    header {
+      background-color: #ffffff;
+      border-bottom: 2px solid #0077b6;
+      padding: 10px 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    header h1 {
+      font-size: 20px;
+      color: #0077b6;
+    }
+
+    header .info {
+      font-size: 14px;
+      text-align: right;
+    }
+
+    main {
+      flex: 1;
+      padding: 40px 20px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    h2 {
+      font-size: 28px;
+      margin-bottom: 40px;
+    }
+
+    .card-container {
+      display: flex;
+      justify-content: center;
+    }
+
+    .card {
+      background-color: white;
+      border: 1px solid #ddd;
+      border-radius: 10px;
+      padding: 20px;
+      width: 200px;
+      text-align: center;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+      cursor: pointer;
+    }
+
+    .card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+    }
+
+    .card img {
+      width: 60px;
+      margin-bottom: 15px;
+    }
+
+    .card span {
+      font-weight: bold;
+      font-size: 16px;
+      color: #0077b6;
+    }
+    a {
+        text-decoration: none;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>RQF1 - Página Principal</h1>
+    <div class="info">
+      <div>26/08/2024&nbsp;&nbsp;15:35</div>
+      <div>Olá usuário</div>
+    </div>
+  </header>
+
+  <main>
+    <h2>Página Inicial</h2>
+    <a href="gestao.php">
+        <div class="card-container">
+      <div class="card" onclick="window.location.href='#'">
+        <img src="https://cdn-icons-png.flaticon.com/512/747/747545.png" alt="Gestão de Clientes">
+        <span>Gestão de Clientes</span>
+      </div>
+    </div>
+    </a>
+    
+  </main>
+
+</body>
+</html>
