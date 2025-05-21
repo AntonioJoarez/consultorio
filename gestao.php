@@ -2,7 +2,6 @@
 
 include 'conexao.php';
 
-// ======= EXCLUSÃO =======
 if (isset($_GET['excluir'])) {
   $idExcluir = (int) $_GET['excluir'];
   $conn->query("DELETE FROM clientes WHERE id = $idExcluir");
@@ -10,16 +9,13 @@ if (isset($_GET['excluir'])) {
   exit();
 }
 
-// ======= PAGINAÇÃO =======
 $registrosPorPagina = 5;
 $paginaAtual = isset($_GET['pagina']) ? (int) $_GET['pagina'] : 1;
 $inicio = ($paginaAtual - 1) * $registrosPorPagina;
 
-// Consulta total de registros
 $totalRegistros = $conn->query("SELECT COUNT(*) as total FROM clientes")->fetch_assoc()['total'];
 $totalPaginas = ceil($totalRegistros / $registrosPorPagina);
 
-// Consulta paginada
 $sql = "SELECT * FROM clientes LIMIT $inicio, $registrosPorPagina";
 $result = $conn->query($sql);
 ?>
@@ -30,7 +26,6 @@ $result = $conn->query($sql);
   <meta charset="UTF-8" />
   <title>Listagem de Clientes</title>
   <style>
-    /* Seu CSS aqui (pode colar o mesmo da versão anterior) */
     body {
       font-family: 'Segoe UI', sans-serif;
       background-color: #f5f7fa;
