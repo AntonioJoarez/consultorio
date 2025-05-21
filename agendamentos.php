@@ -136,13 +136,15 @@ if (!$result) {
             <td><?= date("d/m/Y H:i", strtotime($row['data_hora'])) ?></td>
             <td><?= htmlspecialchars($row['whatsapp']) ?></td>
             <td>
-              <a href="editarAgendamento.php?id=<?= $row['id'] ?>&cliente_id=<?= $cliente_id ?>" class="btn">Editar</a>
-              <a href="excluirAgendamento.php?id=<?= $row['id'] ?>&cliente_id=<?= $cliente_id ?>" class="btn" style="background:#e74c3c;">Excluir</a>
+              <a href="editarAgendamento.php?id=<?= $row['id'] ?>&cliente_id=<?= $cliente_id ?>" class="btn">✏️</a>
+              <a href="excluirAgendamento.php?id=<?= $row['id'] ?>&cliente_id=<?= $cliente_id ?>" class="btn" style="background:#e74c3c;">🗑️</a>
+              <a href="cadastrarAgendamento.php?cliente_id=<?= $cliente_id ?>"  class="btn" style="background-color: #28a745;">➕</a>
+
             </td>
           </tr>
         <?php endwhile; ?>
       <?php endif; ?>
-    </tbody>
+        </tbody>
   </table>
 
   <div class="pagination">
